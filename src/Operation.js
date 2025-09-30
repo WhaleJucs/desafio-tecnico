@@ -8,8 +8,9 @@ class Operation {
     }
 
     // Valida se unitCost e quantity são números válidos
-    const validNumber = typeof number === 'number' && isNaN(number) === false
-    if (validNumber.includes(unitCost) === false || validNumber.includes(quantity) === false) { 
+    const validUnitCost = typeof unitCost === 'number' && isNaN(unitCost) === false
+    const validQuantity = typeof quantity === 'number' && isNaN(quantity) === false
+    if (validUnitCost === false || validQuantity === false) { 
         throw new Error('Número inválido')
     }
 
