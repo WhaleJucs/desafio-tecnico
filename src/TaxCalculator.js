@@ -1,4 +1,3 @@
-import Operation from './Operation.js'
 import Tax from './Tax.js'
 
 class TaxCalculator {
@@ -9,6 +8,10 @@ class TaxCalculator {
         this.taxResult = []
         this.totalVendasMes = 0
         this.valorPrejuizo = 0
+    }
+
+    getTaxResult() {
+        return this.taxResult
     }
 
     processOperation(operation) {
@@ -33,7 +36,7 @@ class TaxCalculator {
 
             // Atualiza saldo e custo médio para venda
             this.saldo -= operation.quantity
-            const lucroTotal = (operation.unitCost - this.custoMedio) * operation.quantity
+            let lucroTotal = (operation.unitCost - this.custoMedio) * operation.quantity
 
             // Calcula o valor total da venda do mês
             const valorTotalVenda = operation.unitCost * operation.quantity
@@ -45,18 +48,17 @@ class TaxCalculator {
                 const lucroAposPrejuizo = lucroTotal - this.valorPrejuizo // Abate o prejuízo acumulado
 
                 if (lucroAposPrejuizo <= 0) {
-                    this.valorPrejuizo = Math.abs(lucroAposPrejuizo) // Atualiza o prejuízo acumulado
+                    this.valorPrejuizo = Math.abs(lucroTotal - this.valorPrejuizo) // Atualiza o prejuízo acumulado
                     this.taxResult.push(new Tax(0)) // Sem taxa para prejuízo
                 }
 
                 else if (lucroAposPrejuizo > 0) {
                     this.valorPrejuizo = 0 // Zera o prejuízo acumulado
-                    lucroTotal = lucroAposPrejuizo // Atualiza o lucro total
 
                     if (this.totalVendasMes > 20000) {
 
                         // Calcula o imposto sobre o lucro      
-                        const tax = lucroTotal * 0.2 // 20% de imposto sobre o lucro segundo as leis brasileiras
+                        const tax = lucroAposPrejuizo * 0.15 // 15% de imposto sobre o lucro segundo as leis brasileiras
                         this.taxResult.push(new Tax(tax))
                         lucroTotal -= tax // Abate o imposto do lucro
                     }
