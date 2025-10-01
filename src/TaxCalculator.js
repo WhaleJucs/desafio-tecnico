@@ -11,11 +11,16 @@ export class TaxCalculator {
     }
 
     getTaxResult() {
-        return  'Saldo: R$' + this.saldo 
-                + '\n' + 'Custo médio: R$' + this.custoMedio 
-                + '\n' + 'Total de vendas do mês: R$' + this.totalVendasMes 
-                + '\n' + 'Total do valor do prejuizo: R$' + this.valorPrejuizo
-                + '\n' + 'Taxas: ' + this.taxResult.map(tax => tax.tax).join(', R$')
+        const taxasFormatadas = this.taxResult.map(taxObj => `R$${taxObj.tax}`).join(', ')
+
+        return  `
+                -- Resultado Final --
+                Saldo: ${this.saldo.toFixed(2)} 
+                Custro Médio: R$${this.custoMedio.toFixed(2)}
+                Total de Vendas no Mês: R$${this.totalVendasMes.toFixed(2)}
+                Prejuízo Acumulado: R$${this.valorPrejuizo.toFixed(2)}
+                Impostos por Operação: [${taxasFormatadas}]
+            `
     }
 
     processOperation(operation) {

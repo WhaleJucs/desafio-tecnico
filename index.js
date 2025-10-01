@@ -2,10 +2,11 @@ import { Operation } from './src/Operation.js'
 import { TaxCalculator } from './src/TaxCalculator.js'
 
 const inputOperations = [
-  new Operation('buy', 10, 2000),
-  new Operation('sell', 20, 500),
-  new Operation('sell', 5, 500),
-  new Operation('sell', 20, 500),
+  new Operation('buy', 20, 200),
+  new Operation('sell', 5, 50),
+  new Operation('sell', 5, 50),
+  new Operation('sell', 10, 30),
+  new Operation('sell', 40, 70)
 ]
 
 const main = () => {
