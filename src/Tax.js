@@ -1,4 +1,4 @@
-class Tax {
+export class Tax {
   constructor(tax) {
 
     // Valida se tax é um número válido

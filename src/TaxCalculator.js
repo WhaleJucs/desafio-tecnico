@@ -1,6 +1,6 @@
-import Tax from './Tax.js'
+import { Tax } from './Tax.js'
 
-class TaxCalculator {
+export class TaxCalculator {
 
     constructor() {
         this.saldo = 0
@@ -11,7 +11,11 @@ class TaxCalculator {
     }
 
     getTaxResult() {
-        return this.taxResult
+        return  'Saldo: R$' + this.saldo 
+                + '\n' + 'Custo médio: R$' + this.custoMedio 
+                + '\n' + 'Total de vendas do mês: R$' + this.totalVendasMes 
+                + '\n' + 'Total do valor do prejuizo: R$' + this.valorPrejuizo
+                + '\n' + 'Taxas: ' + this.taxResult.map(tax => tax.tax).join(', R$')
     }
 
     processOperation(operation) {

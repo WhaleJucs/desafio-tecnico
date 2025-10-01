@@ -1,4 +1,4 @@
-class Operation {
+export class Operation {
   constructor(operation, unitCost, quantity) {
 
     // Valida se o operation é "buy" ou "sell"
