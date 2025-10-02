@@ -1,0 +1,104 @@
+/* Importando a fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Variáveis de cor para fácil manutenção */
+:root {
+    --nu-purple: #820AD1;
+    --nu-white: #FFFFFF;
+    --nu-light-black: #1A1A1A;
+    --nu-dark-text: #333333;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+/* Reset básico e estilos globais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--nu-light-black);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Aplicando o estilo principal */
+.wrapper {
+    background-color: var(--nu-purple);
+    color: var(--nu-white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+/* Estilizando o texto em negrito ao lado dos botões de rádio */
+input[type="radio"] + b {
+    margin-right: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Estilos para os campos de input de número */
+input[type="number"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var(--nu-dark-text);
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--nu-purple);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos para o botão */
+button {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--nu-white);
+    color: var(--nu-purple);
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+/* Estilo para a área de resultado (o h1) */
+#result {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    
+    /* Resetando estilos de h1 e fazendo parecer um bloco de texto */
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: left;
+    white-space: pre-wrap;
+}

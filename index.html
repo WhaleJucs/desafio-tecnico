@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculadora de Imposto de Renda para Operações</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<h2>Calculadora de impostos</h2>
+        <input type="radio" id="buy" name="operation" value="buy" checked><b>Compra</b> 
+        <input type="radio" id="sell" name="operation" value="sell"><b>Venda</b>
+		<br>
+        <input type="number" id="unitCost" placeholder="Preço (R$)"><br> 
+        <input type="number" id="quantity" placeholder="Quantidade"><br>
+		<br>
+		<button onclick="operationProcess()" type="button">Processar Operação</button>
+
+		<h1 id="result"></h1>
+	</div>
+
+	<script src="index.js" type="module"></script> 
+</body>
+</html>
