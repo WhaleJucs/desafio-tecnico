@@ -14,7 +14,7 @@ Neste deasafio Tecnico foi solicitado que fosse preparado um setup de código b�
 
 Baseado nesses requisitos, apresento aqui o resumo do projeto e minha interpretação do que foi proposto:
 
-Resumo do Projeto: Calculadora de Imposto de Renda para Operações de Ações.
+Resumo do Projeto: Calculadora de Imposto de Renda para Operações.
 
 1. Objetivo do Projeto:
 
@@ -36,7 +36,7 @@ index.js: O script de execução (ponto de entrada). Ele define um cenário de t
 
 A TaxCalculator implementa regras fiscais para o cálculo do imposto:
 
-Custo Médio Ponderado: A cada nova compra, o custo médio das ações em carteira é recalculado. Este custo é a base para determinar o lucro ou prejuízo em uma venda futura, garantindo um cálculo preciso do ganho de capital.
+Custo Médio: A cada nova compra, o custo médio das ações em carteira é recalculado. Este custo é a base para determinar o lucro ou prejuízo em uma venda futura, garantindo um cálculo preciso do ganho de capital.
 
 Acúmulo e Abatimento de Prejuízos: A calculadora rastreia prejuízos de vendas anteriores. Se uma operação futura gerar lucro, o prejuízo acumulado é utilizado para abater esse lucro antes que qualquer imposto seja calculado. O saldo do prejuízo é atualizado a cada operação.
 
